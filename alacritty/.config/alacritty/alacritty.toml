@@ -1,0 +1,26 @@
+# color scheme
+import = ["~/.config/alacritty/colorschemes/rose-pine/rose-pine.toml"]
+
+# font settings
+[font.normal]
+family = "MesloLGS NF"
+style = "Regular"
+
+[font.bold]
+family = "MesloLGS NF"
+style = "Bold"
+
+[font.italic]
+family = "MesloLGS NF"
+style = "Regular"
+
+[font]
+size = 15.0
+
+# env
+[env]
+TERM = "xterm-256color"
+
+# mouse settings
+[selection]
+save_to_clipboard = true
