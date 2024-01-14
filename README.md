@@ -2,7 +2,7 @@ Repository holding my .dotfiles configuration, configurated using [STOW](https:/
 
 Configuration folders:
 
-- alacritty
+- [alacritty](alacritty/README.md)
 - brewfile
 - nvim
 - tmux
