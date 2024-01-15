@@ -4,5 +4,5 @@ Configuration folders:
 
 - [alacritty](alacritty/README.md)
 - [brewfile](brewfile/README.md)
-- nvim
-- tmux
+- [nvim](nvim/README.md)
+- [tmux](tmux/README.md)
