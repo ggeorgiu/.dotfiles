@@ -4,6 +4,7 @@ return {
 	lazy = false,
 	priority = 999,
 	config = function()
-		vim.cmd("colorscheme sonokai")
+    vim.g.sonokai_style = 'andromeda'
+    vim.cmd("colorscheme sonokai")
 	end,
 }
