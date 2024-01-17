@@ -1,5 +1,5 @@
 local config = function()
-	local theme = require("lualine.themes.rose-pine")
+	local theme = require("lualine.themes.sonokai")
 
 	-- set bg transparency in all modes
 	theme.normal.c.bg = nil
@@ -13,14 +13,15 @@ local config = function()
 			theme = theme,
 			globalstatus = true,
 		},
-		tabline = {
-			lualine_a = { "mode" },
+		tabline = {	},
+		sections = {
+      			lualine_a = { "mode" },
 			lualine_b = { "buffers" },
 			lualine_x = { "encoding", "fileformat", "filetype" },
 			lualine_y = { "progress" },
 			lualine_z = { "location" },
-		},
-		sections = {},
+	
+    },
 	})
 end
 
