@@ -3,15 +3,15 @@ import = ["~/.config/alacritty/colorschemes/rose-pine/rose-pine.toml"]
 
 # font settings
 [font.normal]
-family = "MesloLGS NF"
+family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [font.bold]
-family = "MesloLGS NF"
+family = "JetBrainsMono Nerd Font"
 style = "Bold"
 
 [font.italic]
-family = "MesloLGS NF"
+family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [font]
