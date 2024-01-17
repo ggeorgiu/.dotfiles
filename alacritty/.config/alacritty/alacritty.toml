@@ -1,5 +1,5 @@
 # color scheme
-import = ["~/.config/alacritty/colorschemes/rose-pine/rose-pine.toml"]
+import = ["~/.config/alacritty/colorschemes/sonokai/andromeda.toml"]
 
 # font settings
 [font.normal]
@@ -12,7 +12,7 @@ style = "Bold"
 
 [font.italic]
 family = "JetBrainsMono Nerd Font"
-style = "Regular"
+style = "Regular"                 #I don't really like italics in my terminal
 
 [font]
 size = 15.0
