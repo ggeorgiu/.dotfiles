@@ -21,7 +21,7 @@ local opts = {
 		lazy = true,
 	},
 	install = {
-		colorscheme = { "rose-pine" },
+		colorscheme = { "sonokai" },
 	},
 	rtp = {
 		disabled_plugins = {
