@@ -54,7 +54,7 @@ local config = function()
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
 	-- go
-	local golangci_lint = require("efmls-configs.linters.golangci_lint")
+	-- local golangci_lint = require("efmls-configs.linters.golangci_lint")
 	local gofumpt = require("efmls-configs.formatters.gofumpt")
 	local goimports = require("efmls-configs.formatters.goimports")
 
@@ -75,7 +75,7 @@ local config = function()
 		settings = {
 			languages = {
 				lua = { luacheck, stylua },
-				go = { golangci_lint, gofumpt, goimports },
+				go = { gofumpt, goimports },
 			},
 		},
 	})

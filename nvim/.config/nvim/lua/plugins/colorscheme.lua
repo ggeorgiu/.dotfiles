@@ -1,10 +1,12 @@
 return {
-	"sainnhe/sonokai",
-	name = "sonokai",
+	"catppuccin/nvim",
+	name = "catppuccin",
+	priority = 1000,
 	lazy = false,
-	priority = 999,
 	config = function()
-		vim.g.sonokai_style = "andromeda"
-		vim.cmd("colorscheme sonokai")
+		require("catppuccin").setup({
+			flavour = "mocha",
+		})
+		vim.cmd("colorscheme catppuccin")
 	end,
 }
