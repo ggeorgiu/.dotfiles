@@ -1,5 +1,5 @@
 # color scheme
-import = ["~/.config/alacritty/colorschemes/sonokai/andromeda.toml"]
+import = ["~/.config/alacritty/colorschemes/catppuccin/catppuccin-mocha.toml"]
 
 # font settings
 [font.normal]
@@ -20,3 +20,6 @@ size = 15.0
 # mouse settings
 [selection]
 save_to_clipboard = true
+
+[env]
+TERM = "xterm-256color"

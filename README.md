@@ -6,3 +6,12 @@ Configuration folders:
 - [brewfile](brewfile/README.md)
 - [nvim](nvim/README.md)
 - [tmux](tmux/README.md)
+
+## Setup
+
+1. Install STOW
+
+2. Download .dotfiles Repository
+
+3. Run setup script
+
