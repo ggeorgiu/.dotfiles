@@ -13,6 +13,7 @@ return {
 			definition_action_keys = {
 				edit = "<CR>",
 			},
+			lightbulb = { enable = false, virtual_text = false },
 		})
 	end,
 	dependencies = {

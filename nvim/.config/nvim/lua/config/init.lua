@@ -15,6 +15,7 @@ require("config.globals") --custom global config
 require("config.options") --custom vim options
 require("config.keymaps") --custom keymaps
 require("config.autocmds") --custom autocmds
+require("config.noops") --custom noops
 
 local opts = {
 	defaults = {
