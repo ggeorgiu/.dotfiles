@@ -14,8 +14,8 @@ local config = function()
 			"lua",
 			"dockerfile",
 			"gitignore",
-      "go",
-    },
+			"go",
+		},
 		auto_install = true,
 		highlight = {
 			enable = true,
@@ -26,6 +26,6 @@ end
 
 return {
 	"nvim-treesitter/nvim-treesitter",
-  lazy = false,
-  config = config
+	lazy = false,
+	config = config,
 }

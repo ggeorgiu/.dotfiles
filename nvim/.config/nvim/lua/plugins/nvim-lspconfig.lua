@@ -39,9 +39,9 @@ local config = function()
 		on_attach = on_attach,
 		settings = {
 			gopls = {
-			  completeUnimported = true,
-        usePlaceholders = true,
-        analyses = {
+				completeUnimported = true,
+				usePlaceholders = true,
+				analyses = {
 					unusedparams = true,
 				},
 				staticcheck = true,

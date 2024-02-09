@@ -20,9 +20,7 @@ local opts = {
 	defaults = {
 		lazy = true,
 	},
-	install = {
-		colorscheme = { "sonokai" },
-	},
+	install = {},
 	rtp = {
 		disabled_plugins = {
 			"gzip",
@@ -43,4 +41,3 @@ local opts = {
 }
 
 require("lazy").setup("plugins", opts)
-
