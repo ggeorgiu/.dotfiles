@@ -7,6 +7,7 @@ local config = function()
 			enable = true,
 		},
 		ensure_installed = {
+			"javascript",
 			"markdown",
 			"json",
 			"yaml",
