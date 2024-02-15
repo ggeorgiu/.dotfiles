@@ -22,7 +22,6 @@ keymap.set("n", "<C-l>", "TmuxNavigateRight") -- Navigate Right
 -- Window management
 keymap.set("n", "<leader>sv", ":vsplit<CR>", opts) -- Split vertically
 keymap.set("n", "<leader>sh", ":split<CR>", opts) -- Split horizontally
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", opts) -- Toggle minimize
 
 -- Indenting
 keymap.set("v", "<", "<gv")
