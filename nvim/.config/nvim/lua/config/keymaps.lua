@@ -37,3 +37,24 @@ keymap.set("n", "<right>", "<nop>")
 -- Comments
 vim.api.nvim_set_keymap("n", "<C-_>", "gcc", { noremap = false })
 vim.api.nvim_set_keymap("v", "<C-_>", "gcc", { noremap = false })
+
+-- Copy & Paste
+keymap.set("x", "<leader>p", '"_dP')
+
+keymap.set("n", "<leader>y", '"+y')
+keymap.set("v", "<leader>y", '"+y')
+keymap.set("n", "<leader>Y", '"+Y')
+
+keymap.set("n", "<leader>d", '"_d')
+keymap.set("v", "<leader>d", '"_d')
+keymap.set("n", "<leader>d", '"_d')
+
+-- Move selection up and down
+keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts)
+keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts)
+
+-- Keep cursor at center screen
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
+keymap.set("n", "n", "nzzzv", opts)
+keymap.set("n", "N", "Nzzzv", opts)
