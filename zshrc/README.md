@@ -1,7 +1,7 @@
 # Zshrc Configuration
 
 ## Theme
-    - power10k
+- power10k
 
 ## Custom Configuration
-    - dictated by `CUSTOM_CONFIG` env variable
+- dictated by `CUSTOM_CONFIG` env variable
