@@ -74,6 +74,7 @@ brew 'p11-kit'
 brew 'pcre2'
 brew 'pixman'
 brew 'python@3.11'
+brew 'python@3.12'
 brew 'qemu'
 brew 'readline'
 brew 'ripgrep'
@@ -98,6 +99,7 @@ tap 'homebrew/cask'
 cask '1password-cli'
 cask 'alacritty'
 cask 'google-cloud-sdk'
+cask 'openlens'
 
 tap 'homebrew/bundle'
 
@@ -118,9 +120,3 @@ brew 'wiresteward'
 
 tap 'uw-labs/tap'
 
-# App Store applications
-mas 'GarageBand (10.4.6)', id: 682658836
-mas 'iMovie (10.3.4)', id: 408981434
-mas 'Keynote (12.1)', id: 409183694
-mas 'Numbers (12.1)', id: 409203825
-mas 'Pages (12.1)', id: 409201541
