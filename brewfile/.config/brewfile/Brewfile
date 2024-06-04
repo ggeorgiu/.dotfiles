@@ -16,6 +16,7 @@ brew 'docker'
 brew 'docker-completion'
 brew 'docker-compose'
 brew 'dtc'
+brew 'efm-langserver'
 brew 'eza'
 brew 'findutils'
 brew 'fzf'
@@ -59,6 +60,7 @@ brew 'luv'
 brew 'lz4'
 brew 'lzo'
 brew 'm4'
+brew 'mas'
 brew 'mpdecimal'
 brew 'msgpack'
 brew 'ncurses'
@@ -76,6 +78,7 @@ brew 'pixman'
 brew 'python@3.11'
 brew 'python@3.12'
 brew 'qemu'
+brew 'rclone'
 brew 'readline'
 brew 'ripgrep'
 brew 'rtmpdump'
@@ -98,13 +101,12 @@ brew 'zstd'
 tap 'homebrew/cask'
 cask '1password-cli'
 cask 'alacritty'
+cask 'font-jetbrains-mono-nerd-font'
 cask 'google-cloud-sdk'
-cask 'openlens'
 
 tap 'homebrew/bundle'
 
 tap 'homebrew/cask-fonts'
-cask 'font-jetbrains-mono-nerd-font'
 
 tap 'homebrew/services'
 
@@ -115,8 +117,17 @@ tap 'derailed/k9s'
 tap 'rcmdnk/file'
 brew 'brew-file'
 
+tap 'txn2/tap'
+brew 'kubefwd'
+
 tap 'utilitywarehouse/tap'
 brew 'wiresteward'
 
 tap 'uw-labs/tap'
 
+# App Store applications
+mas 'GarageBand (10.4.6)', id: 682658836
+mas 'iMovie (10.3.4)', id: 408981434
+mas 'Keynote (12.1)', id: 409183694
+mas 'Numbers (12.1)', id: 409203825
+mas 'Pages (12.1)', id: 409201541
