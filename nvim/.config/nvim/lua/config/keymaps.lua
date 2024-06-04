@@ -20,8 +20,8 @@ keymap.set("n", "<C-k>", "TmuxNavigateUp") -- Navigate Up
 keymap.set("n", "<C-l>", "TmuxNavigateRight") -- Navigate Right
 
 -- Window management
-keymap.set("n", "<leader>sv", ":vsplit<CR>", opts) -- Split vertically
-keymap.set("n", "<leader>sh", ":split<CR>", opts) -- Split horizontally
+keymap.set("n", "<leader>|", ":vsplit<CR>", opts) -- Split vertically
+keymap.set("n", "<leader>_", ":split<CR>", opts) -- Split horizontally
 
 -- Indenting
 keymap.set("v", "<", "<gv")
@@ -57,3 +57,6 @@ keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
 keymap.set("n", "n", "nzzzv", opts)
 keymap.set("n", "N", "Nzzzv", opts)
+
+-- LSP Saga
+keymap.set("n", "<leader>t", ":Lspsaga term_toggle<CR>")

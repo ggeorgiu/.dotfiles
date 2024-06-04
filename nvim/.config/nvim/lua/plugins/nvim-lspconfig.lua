@@ -9,8 +9,7 @@ local config = function()
 	end
 
 	local on_attach = require("util.lsp").on_attach
-	local cmp_nvim_lsp = require("cmp_nvim_lsp")
-	local capabilities = cmp_nvim_lsp.default_capabilities()
+	local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 	-- lua
 	lspconfig.lua_ls.setup({
@@ -55,14 +54,18 @@ local config = function()
 	local stylua = require("efmls-configs.formatters.stylua")
 	-- go
 	-- local golangci_lint = require("efmls-configs.linters.golangci_lint")
-	local gofumpt = require("efmls-configs.formatters.gofumpt")
+	local gofmt = require("efmls-configs.formatters.gofmt")
 	local goimports = require("efmls-configs.formatters.goimports")
-
+	-- log level
+	-- vim.lsp.set_log_level("debug")
+	-- local log_path = vim.lsp.get_log_path()
+	-- print("LSP log path: " .. log_path)
 	-- configure efm server
 	lspconfig.efm.setup({
 		filetypes = {
 			"lua",
 			"go",
+			"sh",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -75,7 +78,7 @@ local config = function()
 		settings = {
 			languages = {
 				lua = { luacheck, stylua },
-				go = { gofumpt, goimports },
+				go = { gofmt, goimports },
 			},
 		},
 	})

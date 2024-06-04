@@ -1,10 +1,23 @@
 return {
-	"glepnir/lspsaga.nvim",
-	lazy = false,
+	"nvimdev/lspsaga.nvim",
+	event = "LspAttach",
 	config = function()
 		require("lspsaga").setup({
+			-- enable the breadcrumbs feature
+			symbols_in_winbar = {
+				enable = true,
+			},
+			implement = {
+				enable = true,
+			},
+			outline = {
+				enable = true,
+			},
 			-- keybinds for navigation in lspsaga window
-			move_in_saga = { prev = "<C-k>", next = "<C-j>" },
+			move_in_saga = {
+				prev = "<C-k>",
+				next = "<C-j>",
+			},
 			-- use enter to open file with finder
 			finder_action_keys = {
 				open = "<CR>",
@@ -13,7 +26,12 @@ return {
 			definition_action_keys = {
 				edit = "<CR>",
 			},
-			lightbulb = { enable = false, virtual_text = false },
+			lightbulb = {
+				virtual_text = false,
+			},
+			ui = {
+				kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+			},
 		})
 	end,
 	dependencies = {
