@@ -6,6 +6,7 @@ return {
 			-- enable the breadcrumbs feature
 			symbols_in_winbar = {
 				enable = true,
+				delay = 350,
 			},
 			implement = {
 				enable = true,
