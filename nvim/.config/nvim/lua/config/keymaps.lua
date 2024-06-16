@@ -57,6 +57,3 @@ keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
 keymap.set("n", "n", "nzzzv", opts)
 keymap.set("n", "N", "Nzzzv", opts)
-
--- LSP Saga
-keymap.set("n", "<leader>t", ":Lspsaga term_toggle<CR>")
