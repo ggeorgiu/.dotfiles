@@ -8,7 +8,7 @@ M.on_attach = function(_, bufnr)
 
 	-- set keybinds
 	keymap.set("n", "fd", "<cmd>Lspsaga finder<CR>", opts)
-	keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+	keymap.set("n", "hd", "<cmd>Lspsaga hover_doc<CR>", opts)
 end
 
 return M

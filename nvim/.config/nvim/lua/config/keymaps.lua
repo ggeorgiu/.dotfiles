@@ -48,9 +48,11 @@ keymap.set("n", "<leader>d", '"_d')
 keymap.set("v", "<leader>d", '"_d')
 keymap.set("n", "<leader>d", '"_d')
 
--- Move selection up and down
+-- Move selection up and down (visual/normal mode)
 keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts)
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts)
+keymap.set("n", "K", ":m .-2<CR>", opts)
+keymap.set("n", "J", ":m .+1<CR>", opts)
 
 -- Keep cursor at center screen
 keymap.set("n", "<C-d>", "<C-d>zz")
