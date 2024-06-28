@@ -28,10 +28,10 @@ keymap.set("v", "<", "<gv")
 keymap.set("v", ">", ">gv")
 
 -- Disable arrow keys
-keymap.set("n", "<up>", "<nop>")
-keymap.set("n", "<down>", "<nop>")
-keymap.set("n", "<left>", "<nop>")
-keymap.set("n", "<right>", "<nop>")
+keymap.set({ "n", "i", "v" }, "<up>", "<nop>")
+keymap.set({ "n", "i", "v" }, "<down>", "<nop>")
+keymap.set({ "n", "i", "v" }, "<left>", "<nop>")
+keymap.set({ "n", "i", "v" }, "<right>", "<nop>")
 
 -- Comments
 vim.api.nvim_set_keymap("n", "<C-_>", "gccj", { noremap = false })
@@ -51,8 +51,8 @@ keymap.set("n", "<leader>d", '"_d')
 -- Move selection up and down (visual/normal mode)
 keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts)
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts)
-keymap.set("n", "K", ":m .-2<CR>", opts)
-keymap.set("n", "J", ":m .+1<CR>", opts)
+keymap.set("n", "K", ":m .-2<CR>==", opts)
+keymap.set("n", "J", ":m .+1<CR>==", opts)
 
 -- Keep cursor at center screen
 keymap.set("n", "<C-d>", "<C-d>zz")
