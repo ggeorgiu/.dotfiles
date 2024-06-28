@@ -68,6 +68,7 @@ brew 'neofetch'
 brew 'neovim'
 brew 'nettle'
 brew 'node'
+brew 'oh-my-posh'
 brew 'oha'
 brew 'oniguruma'
 brew 'openldap'
@@ -114,6 +115,8 @@ tap 'homebrew/services'
 tap 'bufbuild/buf'
 
 tap 'derailed/k9s'
+
+tap 'jandedobbeleer/oh-my-posh'
 
 tap 'rcmdnk/file'
 brew 'brew-file'
