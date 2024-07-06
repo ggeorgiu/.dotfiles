@@ -16,6 +16,7 @@ require("config.options") --custom vim options
 require("config.keymaps") --custom keymaps
 require("config.autocmds") --custom autocmds
 require("config.noops") --custom noops
+require("config.vimwiki") --custom vimwiki opts
 
 local opts = {
 	defaults = {
