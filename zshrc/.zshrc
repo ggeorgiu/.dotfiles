@@ -79,12 +79,11 @@ export ZSH="$HOME/.oh-my-zsh"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git 
-  kubectl 
-  kubectx 
-  kube-ps1 
   fzf
+  fzf-tab
   zsh-autosuggestions
   zsh-syntax-highlighting
+  zsh-completions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -115,6 +114,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Load completitions
+autoload -U compinit && compinit 
+
+# Completition styling
+# preview diectory content with eza when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+# popup window padding
+zstyle ':fzf-tab:complete:cd:*' popup-pad 30 0
+# switch group using tmux popup
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 #################### Personal Configuration #####################
 CUSTOM_CONFIG=~/config/custom_config
 source $CUSTOM_CONFIG/zzz_root_zzz.sh
@@ -132,3 +141,6 @@ if [ -f '/Users/gabrielgeorgiu/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/gabrielgeorgiu/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/gabrielgeorgiu/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Enable zoxide
+eval "$(zoxide init --cmd='cd' zsh)"
