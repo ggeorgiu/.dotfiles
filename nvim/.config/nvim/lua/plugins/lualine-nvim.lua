@@ -1,9 +1,7 @@
+local lualine_bg_color = "#1e222a"
 local config = function()
-	local theme = require("lualine.themes.catppuccin")
-
 	require("lualine").setup({
 		options = {
-			theme = theme,
 			globalstatus = true,
 		},
 		tabline = {},

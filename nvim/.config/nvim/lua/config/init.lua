@@ -40,6 +40,10 @@ local opts = {
 	change_detection = {
 		notify = false,
 	},
+	ui = {
+		backdrop = 100,
+		border = "rounded",
+	},
 }
 
 require("lazy").setup("plugins", opts)

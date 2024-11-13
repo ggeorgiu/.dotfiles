@@ -1,21 +1,22 @@
 return {
-	"catppuccin/nvim",
-	name = "catppuccin",
-	priority = 1000,
-	lazy = false,
-	config = function()
-		require("catppuccin").setup({
-			flavour = "mocha",
-			integrations = {
-				lsp_saga = true,
-				which_key = true,
-				telescope = true,
-				indent_blankline = {
-					enabled = true,
-					colored_indent_levels = true,
+	{
+		"xiantang/darcula-dark.nvim",
+		config = function()
+			-- setup must be called before loading
+			require("darcula").setup({
+				override = function(_)
+					return {
+						background = "#323335",
+						dark = "#232425",
+					}
+				end,
+				opt = {
+					integrations = {
+						telescope = false,
+						dap_nvim = true,
+					},
 				},
-			},
-		})
-		vim.cmd("colorscheme catppuccin")
-	end,
+			})
+		end,
+	},
 }
