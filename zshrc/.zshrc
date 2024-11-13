@@ -118,12 +118,21 @@ source $ZSH/oh-my-zsh.sh
 autoload -U compinit && compinit 
 
 # Completition styling
-# preview diectory content with eza when completing cd
+# disable default menu completion
+zstyle 'completion:*' menu no
+# preview directory content with eza when completing cd
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 # popup window padding
 zstyle ':fzf-tab:complete:cd:*' popup-pad 30 0
-# switch group using tmux popup
+# use tmux popup when displaying ls/cd suggestions
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+
+# FZF Configuration
+export FZF_DEFAULT_OPTS='--tmux 50% --layout reverse --border' 
+
+# Workaround for tmux popup
+#alias fzf='fzf --tmux center 50%,50%' 
+
 #################### Personal Configuration #####################
 CUSTOM_CONFIG=~/config/custom_config
 source $CUSTOM_CONFIG/zzz_root_zzz.sh
