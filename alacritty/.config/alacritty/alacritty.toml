@@ -1,5 +1,6 @@
 # color scheme
-import = ["~/.config/alacritty/colorschemes/catppuccin/catppuccin-mocha.toml"]
+import = ["~/.config/alacritty/colorschemes/catppuccin/catppuccin-macchiato.toml"]
+
 
 # font settings
 [font.normal]
@@ -12,7 +13,7 @@ style = "Bold"
 
 [font.italic]
 family = "JetBrainsMono Nerd Font"
-style = "Regular"                 #I don't really like italics in my terminal
+style = "Regular"                 #I don't really like italics in the terminal
 
 [font]
 size = 15.0
