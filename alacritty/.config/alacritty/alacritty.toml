@@ -16,7 +16,7 @@ family = "JetBrainsMono Nerd Font"
 style = "Regular"                 #I don't really like italics in the terminal
 
 [font]
-size = 15.0
+size = 13.5
 
 # mouse settings
 [selection]

@@ -19,3 +19,6 @@ vim.g.vimwiki_list = {
 		name = "personal",
 	},
 }
+
+vim.api.nvim_set_hl(0, "VimwikiLink", { fg = "#87CEEB", underline = true })
+

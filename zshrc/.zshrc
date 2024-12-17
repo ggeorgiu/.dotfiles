@@ -125,13 +125,10 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 # popup window padding
 zstyle ':fzf-tab:complete:cd:*' popup-pad 30 0
 # use tmux popup when displaying ls/cd suggestions
-zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
-
+# zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+#
 # FZF Configuration
 export FZF_DEFAULT_OPTS='--tmux 50% --layout reverse --border' 
-
-# Workaround for tmux popup
-#alias fzf='fzf --tmux center 50%,50%' 
 
 #################### Personal Configuration #####################
 CUSTOM_CONFIG=~/config/custom_config
