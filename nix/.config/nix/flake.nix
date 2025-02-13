@@ -5,11 +5,36 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+
+    # Optional: Declarative tap management
+    # utilitywarehouse-tap = {
+      # url = "git+ssh://github:utilitywarehouse/homebrew-tap";
+      # flake = false;
+    # };
+    uw-labs-tap = {
+       url = "github:uw-labs/homebrew-tap";
+       flake = false;
+    };
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
+    homebrew-bundle = {
+      url = "github:homebrew/homebrew-bundle";
+      flake = false;
+    };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, homebrew-core, homebrew-cask, homebrew-bundle, uw-labs-tap }:
   let
     configuration = { pkgs, config, ... }: {
+      nixpkgs.config.allowUnfree = true;
+
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
@@ -56,8 +81,18 @@
             pkgs.nodejs
             pkgs.terminal-notifier
             pkgs.timer
+            pkgs._1password-cli
+            pkgs.terraform
+            pkgs.awscli
         ];
 
+      homebrew = {
+        enable = true;
+        brews = [
+            "strongbox"
+        ];
+        onActivation.cleanup = "zap";
+      };
       fonts.packages =
         [
             pkgs.nerd-fonts.jetbrains-mono
@@ -105,7 +140,26 @@
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#work
     darwinConfigurations."work" = nix-darwin.lib.darwinSystem {
-      modules = [ configuration ];
+      modules = [ 
+        configuration 
+        nix-homebrew.darwinModules.nix-homebrew
+        {
+            nix-homebrew = {
+                enable = true;
+                # Apple Silicon 
+                enableRosetta = true;
+                # User owning the homebrew prefix
+                user = "gabrielgeorgiu";
+                taps = {
+                  "homebrew/homebrew-core" = homebrew-core;
+                  "homebrew/homebrew-cask" = homebrew-cask;
+                  "homebrew/homebrew-bundle" = homebrew-bundle;
+                  "uw-labs/homebrew-tap" = inputs.uw-labs-tap;
+                };
+                mutableTaps = false;
+            };
+        }
+      ];
     };
   };
 }
