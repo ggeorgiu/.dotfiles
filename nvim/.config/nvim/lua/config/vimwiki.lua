@@ -18,7 +18,13 @@ vim.g.vimwiki_list = {
 		index = "personal",
 		name = "personal",
 	},
+	{
+		path = "~/notes/learning",
+		syntax = "markdown",
+		ext = "md",
+		index = "learning",
+		name = "learning",
+	},
 }
 
 vim.api.nvim_set_hl(0, "VimwikiLink", { fg = "#87CEEB", underline = true })
-

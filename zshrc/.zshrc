@@ -1,3 +1,5 @@
+# Uncomment to use the profiling module
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -84,7 +86,13 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-completions
+  direnv
+  tmux
 )
+
+if [ ! -n "$TERMINAL_EMULATOR" ]; then  
+    ZSH_TMUX_AUTOSTART=true
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -115,7 +123,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Load completitions
-autoload -U compinit && compinit 
+#autoload -Uz compinit && compinit 
 
 # Completition styling
 # disable default menu completion
@@ -134,9 +142,7 @@ export FZF_DEFAULT_OPTS='--tmux 50% --layout reverse --border'
 CUSTOM_CONFIG=~/config/custom_config
 source $CUSTOM_CONFIG/zzz_root_zzz.sh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
+export EDITOR=nvim
 # intialising oh-my-posh
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
     eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/zen.toml)"
