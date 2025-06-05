@@ -16,6 +16,10 @@
        url = "github:uw-labs/homebrew-tap";
        flake = false;
     };
+    hashicorp-tap = {
+        url = "github:hashicorp/homebrew-tap";
+        flake = false;
+    };
     homebrew-core = {
       url = "github:homebrew/homebrew-core";
       flake = false;
@@ -30,7 +34,7 @@
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, homebrew-core, homebrew-cask, homebrew-bundle, uw-labs-tap }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, homebrew-core, homebrew-cask, homebrew-bundle, uw-labs-tap, hashicorp-tap }:
   let
     configuration = { pkgs, config, ... }: {
       nixpkgs.config.allowUnfree = true;
@@ -75,21 +79,25 @@
             pkgs.stow
             pkgs.direnv
             pkgs.docker
-            pkgs.docker-compose
             pkgs.pre-commit
             pkgs.tflint
             pkgs.nodejs
             pkgs.terminal-notifier
             pkgs.timer
             pkgs._1password-cli
-            pkgs.terraform
             pkgs.awscli
+            pkgs.jq
+            pkgs.postgresql
+            pkgs.gh
+            pkgs.go-migrate
         ];
 
       homebrew = {
         enable = true;
         brews = [
             "strongbox"
+            "hashicorp/tap/terraform"
+            "snzip"
         ];
         onActivation.cleanup = "zap";
       };
@@ -154,6 +162,7 @@
                   "homebrew/homebrew-core" = homebrew-core;
                   "homebrew/homebrew-cask" = homebrew-cask;
                   "homebrew/homebrew-bundle" = homebrew-bundle;
+                  "hashicorp/homebrew-tap" = inputs.hashicorp-tap;
                   "uw-labs/homebrew-tap" = inputs.uw-labs-tap;
                 };
                 mutableTaps = false;
