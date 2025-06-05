@@ -13,7 +13,7 @@ style = "Bold"
 
 [font.italic]
 family = "JetBrainsMono Nerd Font"
-style = "Regular"                 #I don't really like italics in the terminal
+style = "Italic"                 #I don't really like italics in the terminal
 
 [font]
 size = 13.5
