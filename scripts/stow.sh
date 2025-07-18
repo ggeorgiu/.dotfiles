@@ -1,5 +1,16 @@
 #!/bin/zsh
 
+# check if it should be a dry run or not
+dry_run=1
+while getopts x val
+do
+	case $val in
+  x) dry_run=0;;
+  ?) printf "Invalid value provided"
+   	  exit 2;;
+  esac
+done
+
 # dirs that should not be stowed
 excluded_dirs=("nix" "scripts")
 
@@ -13,37 +24,26 @@ should_exclude() {
 	return 1
 }
 
-dry_run=1
-
-while getopts x val
-do
-	case $val in
-  x) dry_run=0;;
-  ?) printf "Invalid value provided"
-   	  exit 2;;
-  esac
-done
-
-for dir in ./*; do
+for val in ./*; do
 	# remove "./" from the beginning of the filename
-	bar=${dir:2}
+	dir=${val:2}
 
 	# if file is not a directory, skip it
-	if [ ! -d "$bar" ]; then
+	if [ ! -d "$dir" ]; then
 		continue
 	fi
 
   # if directory should be excluded, skip it
-	if should_exclude "$bar" ; then
-		echo "$bar - excluded"
+	if should_exclude "$dir" ; then
+		printf "%-12s | %-8s |\n" "$val" "excluded"
 		continue
 	fi
 
 	if [ "$dry_run" -eq 1 ]; then
-		echo "$bar - stowed"
+		printf "%-12s | %-8s |\n" "$val"  "stowed"
 		continue
 	fi
 
 	# create
-	stow "$bar" --no-folding
+	stow "$dir" --no-folding
 done
