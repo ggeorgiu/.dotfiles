@@ -1,0 +1,9 @@
+--target=~/.config
+
+--ignore=nix
+--ignore=zshrc
+--ignore=justfile
+--ignore=scripts
+--ignore=.stowrc
+
+--no-folding

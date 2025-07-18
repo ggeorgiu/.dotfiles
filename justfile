@@ -1,21 +1,21 @@
 dotfiles_dir := justfile_directory()
 
-stow:
+stow-dry-run:
     @cd "{{ dotfiles_dir }}"
     @./scripts/stow.sh
 
-stow-exec:
+stow:
     @cd "{{ dotfiles_dir }}"
     @./scripts/stow.sh -x
 
-install-nix:
+install-nix-dry-run:
     @cd "{{ dotfiles_dir }}"
     @./scripts/install-nix.sh
 
-install-nix-exec:
+install-nix:
     @cd "{{ dotfiles_dir }}"
     @./scripts/install-nix.sh -x
 
-install: install-nix stow
+install-dry-run: install-nix-dry-run stow-dry-run
 
-install-exec: install-nix-exec stow-exec
+install: install-nix stow
