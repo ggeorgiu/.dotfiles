@@ -69,7 +69,7 @@
             pkgs.lima
             pkgs.colima
             pkgs.qemu
-            pkgs.xz 
+            pkgs.xz
             pkgs.k9s
             pkgs.kubectx
             pkgs.kubefwd
