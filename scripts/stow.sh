@@ -14,11 +14,11 @@ do
 done
 
 if [ "$dry_run" -eq 1 ]; then
-		stow . -n -v
+		stow --restow . -n -v
 		printf "SYMLINKS CREATED -- DRY-RUN \n\n"
 		exit 0
 fi
 
-stow . -v
+stow --restow .
 
 printf "SYMLINKS CREATED \n\n"
