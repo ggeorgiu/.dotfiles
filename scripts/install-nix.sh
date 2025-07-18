@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+printf "CONFIGURING NIX...\n"
+
 # check if it should be a dry run or not
 dry_run=1
 while getopts x val
@@ -19,7 +21,11 @@ nix_path="$HOME/.config/"
 
 if [ "$dry_run" -eq 1 ]; then
  printf "copying %s into %s\n" "$current_path/nix" "$nix_path"
+ printf "NIX CONFIGURED -- DRY RUN \n\n"
  exit 0
 fi
 
 cp -r "$current_path/nix" "$nix_path/"
+printf "copied %s into %s\n" "$current_path/nix" "$nix_path"
+
+printf "NIX CONFIGURED \n\n"

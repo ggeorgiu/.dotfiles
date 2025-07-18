@@ -90,6 +90,7 @@
             pkgs.postgresql
             pkgs.gh
             pkgs.go-migrate
+            pkgs.just
         ];
 
       homebrew = {
@@ -142,6 +143,8 @@
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
+
+      system.primaryUser="gabrielgeorgiu";
     };
   in
   {

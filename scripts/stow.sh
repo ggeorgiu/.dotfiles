@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+printf "CREATING SYMLINKS...\n"
+
 # check if it should be a dry run or not
 dry_run=1
 while getopts x val
@@ -46,4 +48,12 @@ for val in ./*; do
 
 	# create
 	stow "$dir" --no-folding
+	printf "%-12s | %-8s |\n" "$val"  "stowed"
 done
+
+if [ "$dry_run" -eq 1 ]; then
+		printf "SYMLINKS CREATED -- DRY-RUN \n\n"
+		exit 0
+fi
+
+printf "SYMLINKS CREATED \n\n"
