@@ -3,7 +3,7 @@
 --ignore=nix
 --ignore=zshrc
 --ignore=justfile
---ignore=scripts
+--ignore=zzz-install-scripts
 --ignore=.stowrc
 
 --no-folding
