@@ -34,8 +34,8 @@ keymap.set({ "n", "i", "v" }, "<left>", "<nop>")
 keymap.set({ "n", "i", "v" }, "<right>", "<nop>")
 
 -- Comments
-vim.api.nvim_set_keymap("n", "<C-->", "gccj", { noremap = false })
-vim.api.nvim_set_keymap("v", "<C-->", "gccj", { noremap = false })
+keymap.set("n", "<C-_>", "gccj", { remap = true })
+keymap.set("v", "<C-_>", "gccj", { remap = true })
 
 -- Copy & Paste
 keymap.set("x", "<leader>p", '"_dP')

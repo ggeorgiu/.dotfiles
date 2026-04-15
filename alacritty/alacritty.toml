@@ -14,6 +14,9 @@ style = "Regular"
 [font]
 size = 14.5
 
+[window]
+opacity = 1.0
+
 # mouse settings
 [selection]
 save_to_clipboard = true
