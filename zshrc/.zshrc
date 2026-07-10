@@ -156,3 +156,10 @@ if [ -f '/Users/gabrielgeorgiu/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 
 # Enable zoxide
 eval "$(zoxide init --cmd='cd' zsh)"
+export PATH="$HOME/.local/bin:$PATH"
+
+################## Haskell Config ###########################
+source ~/.ghcup/env
+export PATH="$HOME/.ghcup/bin/:$PATH"
+
+[ -f "/Users/gabrielgeorgiu/.ghcup/env" ] && . "/Users/gabrielgeorgiu/.ghcup/env" # ghcup-env
